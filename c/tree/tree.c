@@ -1,5 +1,15 @@
 #include "tree.h"
 
+/*
+typedef struct TreeNode *PtrToNode;
+
+struct TreeNode {
+  ElementType Element;
+  PtrToNode FirstChild;
+  PtrToNode NextSibling;
+}
+*/
+
 struct TreeNode {
   ElementType Element;
   SearchTree Left;
