@@ -81,15 +81,15 @@ SearchTree Delete(ElementType X, SearchTree T) {
     T->Left = Delete(X, T->Left);
   else if (X > T->Element) /* Go right */
     T->Right = Delete(X, T->Right);
-  else                         /* Found element to be deleted */
-      if (T->Left && T->Right) /* Two children */
-  {
+  else if (T->Left && T->Right) {
+    /* Found element to be deleted */
+    /* Two children */
     /* Replace with smallest in right subtree */
     TmpCell = FindMin(T->Right);
     T->Element = TmpCell->Element;
     T->Right = Delete(T->Element, T->Right);
-  } else /* One or zero children */
-  {
+  } else {
+    /* One or zero children */
     TmpCell = T;
     if (T->Left == NULL) /* Also handles 0 children */
       T = T->Right;
