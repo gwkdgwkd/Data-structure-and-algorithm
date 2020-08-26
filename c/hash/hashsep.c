@@ -50,7 +50,7 @@ HashTable InitializeTable(int TableSize) {
     FatalError("Out of space!!!");
 
   H->TableSize = NextPrime(TableSize);
-  printf("table size: %d\n",H->TableSize);
+  printf("table size: %d\n", H->TableSize);
 
   /* Allocate array of lists */
   H->TheLists = malloc(sizeof(List) * H->TableSize);
